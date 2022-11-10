@@ -15,6 +15,7 @@ import {
   CommentIcon,
   RetweetIcon,
   LikeIcon,
+  ShareIcon,
 } from './styles';
 const Tweet: React.FC = () => {
   return (
@@ -48,6 +49,10 @@ const Tweet: React.FC = () => {
             </Status>
             <Status>
               <LikeIcon />
+              18
+            </Status>
+            <Status>
+              <ShareIcon />
               18
             </Status>
           </Icons>
