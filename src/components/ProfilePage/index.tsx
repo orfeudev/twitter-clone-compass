@@ -15,8 +15,8 @@ import Feed from '../Feed';
 const ProfilePage: React.FC = () => {
   return (
     <Container>
-      <Banner>
-        <Avatar />
+      <Banner imageURL="https://images.unsplash.com/photo-1667222886295-72267cdc99ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+        <Avatar imageURL="https://attakus.art/wp-content/uploads/2022/07/b425-john-blacksad-buste-retour-en-stock-article-guarnido-attakus.jpg" />
       </Banner>
 
       <ProfileData>

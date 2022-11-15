@@ -13,10 +13,10 @@ export const Tab = styled.div`
   font-size: 15px;
   outline: 0;
   cursor: pointer;
-  color: var(--twitter);
-  border-bottom: 2px solid var(--twitter);
+  color: ${(props) => props.theme.colors.twitter};
+  border-bottom: 2px solid ${(props) => props.theme.colors.twitter};
   &:hover {
-    background: var(--twitter-dark-hover);
+    background: ${(props) => props.theme.colors.twitterDarkHover};
   }
 `;
 

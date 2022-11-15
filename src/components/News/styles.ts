@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   font-size: 14px;
   > span {
-    color: var(--gray);
+    color: ${(props) => props.theme.colors.gray};
     margin-bottom: 3px;
   }
 `;

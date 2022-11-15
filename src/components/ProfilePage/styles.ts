@@ -16,23 +16,23 @@ export const Container = styled.div`
   }
 `;
 
-export const Banner = styled.div`
+export const Banner = styled.div<{ imageURL?: string }>`
   flex-shrink: 0;
 
   width: 100%;
   height: min(33vw, 199px);
-
-  background: var(--twitter);
-
+  background-image: url(${(props) => props.imageURL});
+  background-size: cover;
   position: relative;
 `;
 
-export const Avatar = styled.div`
+export const Avatar = styled.div<{ imageURL?: string }>`
   width: max(45px, min(135px, 22vw));
   height: max(45px, min(135px, 22vw));
 
-  border: 3.75px solid var(--primary);
-  background: var(--gray);
+  border: 3.75px solid ${(props) => props.theme.colors.primary};
+  background-image: url(${(props) => props.imageURL});
+  background-size: cover;
   border-radius: 50%;
 
   position: absolute;
@@ -56,7 +56,7 @@ export const ProfileData = styled.div`
     font-weight: normal;
     font-size: 15px;
 
-    color: var(--gray);
+    color: ${(props) => props.theme.colors.gray};
   }
   > p {
     font-size: 15px;
@@ -64,7 +64,7 @@ export const ProfileData = styled.div`
 
     > a {
       text-decoration: none;
-      color: var(--twitter);
+      color: ${(props) => props.theme.colors.twitter};
     }
   }
   > ul {
@@ -74,10 +74,10 @@ export const ProfileData = styled.div`
 
     > li {
       font-size: 15px;
-      color: var(--gray);
+      color: ${(props) => props.theme.colors.gray};
 
       > svg {
-        fill: var(--gray);
+        fill: ${(props) => props.theme.colors.gray};
         margin-right: 5px;
       }
     }
@@ -88,7 +88,7 @@ const iconCSS = css`
   width: 20px;
   height: 20px;
 
-  color: var(--gray);
+  color: ${(props) => props.theme.colors.gray};
 `;
 
 export const LocationIcon = styled(LocationOn)`
@@ -103,7 +103,7 @@ export const Followage = styled.div`
 
   > span {
     font-size: 15px;
-    color: var(--gray);
+    color: ${(props) => props.theme.colors.gray};
 
     & + span {
       margin-left: 20px;

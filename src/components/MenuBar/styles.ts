@@ -40,7 +40,7 @@ export const Logo = styled(Person)`
   height: 41px;
 
   > path {
-    color: var(--white);
+    color: ${(props) => props.theme.colors.twitter};
   }
 
   margin-bottom: 20px;
@@ -94,15 +94,15 @@ export const MenuButton = styled.button`
   border-radius: 25px;
 
   &:hover {
-    background: var(--twitter-dark-hover);
+    background: ${(props) => props.theme.colors.twitterDarkHover};
   }
 
   &:hover,
   &.active {
     span,
     svg {
-      color: var(--twitter);
-      fill: var(--twitter);
+      color: ${(props) => props.theme.colors.primary};
+      fill: ${(props) => props.theme.colors.primary};
     }
   }
 `;
@@ -112,7 +112,7 @@ const iconCSS = css`
 
   width: 30px;
   height: 30px;
-  color: var(--white);
+  color: ${(props) => props.theme.colors.white};
 `;
 
 export const HomeIcon = styled(Home)`
@@ -150,7 +150,7 @@ export const Avatar = styled.div`
   flex-shrink: 0;
 
   border-radius: 50%;
-  background: var(--gray);
+  background: ${(props) => props.theme.colors.gray};
 `;
 
 export const ProfileData = styled.div`
@@ -164,7 +164,7 @@ export const ProfileData = styled.div`
     font-size: 14px;
 
     > span {
-      color: var(--gray);
+      color: ${(props) => props.theme.colors.gray};
     }
   }
 `;
@@ -175,13 +175,13 @@ export const ExitIcon = styled(ExitToApp)`
     display: inline-block;
     width: 25px;
     height: 25px;
-    color: var(--white);
+    color: ${(props) => props.theme.colors.white};
     margin-left: 30px;
     cursor: pointer;
 
     &:hover {
       > path {
-        color: var(--like);
+        color: ${(props) => props.theme.colors.like};
       }
     }
   }

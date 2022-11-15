@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   padding: 14px 16px;
 
-  border-bottom: 1px solid var(--outline);
+  border-bottom: 1px solid ${(props) => props.theme.colors.outline};
   max-width: 100%;
 `;
 export const Retweeted = styled.div`
@@ -14,7 +14,7 @@ export const Retweeted = styled.div`
   align-items: center;
 
   font-size: 13px;
-  color: var(--gray);
+  color: ${(props) => props.theme.colors.gray};
 `;
 export const RocketseatIcon = styled(Retweet)`
   width: 16px;
@@ -24,7 +24,7 @@ export const RocketseatIcon = styled(Retweet)`
   margin-right: 9px;
 
   > path {
-    fill: var(--gray);
+    fill: ${(props) => props.theme.colors.gray};
   }
 `;
 export const Body = styled.div`
@@ -39,7 +39,7 @@ export const Avatar = styled.div`
 
   border-radius: 50%;
   flex-shrink: 0;
-  background: var(--gray);
+  background: ${(props) => props.theme.colors.gray};
 
   position: absolute;
   top: 0;
@@ -67,7 +67,7 @@ export const Header = styled.div`
 
   > span,
   time {
-    color: var(--gray);
+    color: ${(props) => props.theme.colors.gray};
   }
 
   > strong,
@@ -79,7 +79,7 @@ export const Header = styled.div`
 `;
 
 export const Dot = styled.div`
-  background: var(--gray);
+  background: ${(props) => props.theme.colors.gray};
   width: 2px;
   height: 2px;
   margin: 0 10px;
@@ -93,7 +93,7 @@ export const ImageContent = styled.div`
   margin-top: 12px;
   width: 100%;
   height: min(285px, max(175px, 41vw));
-  background: var(--outline);
+  background: ${(props) => props.theme.colors.outline};
   border-radius: 14px;
 
   cursor: pointer;
@@ -131,34 +131,34 @@ export const Status = styled.div`
   }
 
   &:nth-child(1) {
-    color: var(--gray);
+    color: ${(props) => props.theme.colors.gray};
     &,
     > svg path {
-      fill: var(--gray);
+      fill: ${(props) => props.theme.colors.gray};
     }
   }
 
   &:nth-child(2) {
-    color: var(--retweet);
+    color: ${(props) => props.theme.colors.retweet};
     &,
     > svg path {
-      fill: var(--retweet);
+      fill: ${(props) => props.theme.colors.retweet};
     }
   }
 
   &:nth-child(3) {
-    color: var(--like);
+    color: ${(props) => props.theme.colors.like};
     &,
     > svg {
-      fill: var(--like);
+      fill: ${(props) => props.theme.colors.like};
     }
   }
 
   &:nth-child(4) {
-    color: var(--twitter);
+    color: ${(props) => props.theme.colors.twitter};
     &,
     > svg {
-      fill: var(--twitter);
+      fill: ${(props) => props.theme.colors.twitter};
     }
   }
 `;

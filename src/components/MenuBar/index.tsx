@@ -54,9 +54,7 @@ const MenuBar: React.FC = () => {
           <MoreIcon />
           <span>More</span>
         </MenuButton>
-        <Button>
-          <span>Tweet</span>
-        </Button>
+        <Button>Tweet</Button>
       </TopSide>
       <BotSide>
         <Avatar />

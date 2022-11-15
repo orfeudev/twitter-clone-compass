@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfilePage from '../ProfilePage';
+import ThemeToggler from '../ThemeToggler';
 import {
   Container,
   Header,
@@ -23,6 +24,7 @@ const Main: React.FC = () => {
           <strong>Orfeu</strong>
           <span>123 Tweets</span>
         </ProfileInfo>
+        <ThemeToggler />
       </Header>
       <ProfilePage />
       <BottomMenu>

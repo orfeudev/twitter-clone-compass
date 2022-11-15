@@ -5,9 +5,11 @@ interface ButtonProps {
 }
 
 export default styled.button<ButtonProps>`
-  background: ${(props) => (props.outlined ? 'transparent' : 'var(--twitter)')};
-  color: ${(props) => (props.outlined ? 'var(--twitter)' : 'var(--white)')};
-  border: ${(props) => (props.outlined ? '1px solid var(--twitter)' : 'none')};
+  background: ${(props) =>
+    props.outlined ? 'transparent' : props.theme.colors.twitter};
+  color: ${(props) => (props.outlined ? props.theme.colors.twitter : 'white')};
+  border: ${(props) =>
+    props.outlined ? `1px solid ${props.theme.colors.twitter}` : 'none'};
 
   padding: 16px;
   border-radius: 25px;
@@ -20,7 +22,7 @@ export default styled.button<ButtonProps>`
   &:hover {
     background: ${(props) =>
       props.outlined
-        ? 'var(--twitter-dark-hover)'
-        : 'var(--twitter-light-hover)'};
+        ? props.theme.colors.twitterDarkHover
+        : props.theme.colors.twitterLightHover};
   }
 `;
