@@ -1,13 +1,16 @@
 import styled, { css } from 'styled-components';
+
 import { LocationOn, Cake } from '../../styles/Icons';
 import Button from '../Button';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+
   max-height: 100%;
-  overflow-y: scroll;
-  scrollbar-width: none;
+  overflow-y: auto;
+
+  scrollbar-width: none; /** Firefox */
   ::-webkit-scrollbar {
     display: none;
   }
@@ -15,6 +18,7 @@ export const Container = styled.div`
 
 export const Banner = styled.div`
   flex-shrink: 0;
+
   width: 100%;
   height: min(33vw, 199px);
 
@@ -35,8 +39,9 @@ export const Avatar = styled.div`
   bottom: max(-60px, -10vw);
   left: 15px;
 `;
+
 export const ProfileData = styled.div`
-  padding: min(calc(10vw+7px), 67px) 16px 0;
+  padding: min(calc(10vw + 7px), 67px) 16px 0;
 
   display: flex;
   flex-direction: column;
@@ -47,13 +52,12 @@ export const ProfileData = styled.div`
     font-weight: bold;
     font-size: 19px;
   }
-
   > h2 {
     font-weight: normal;
     font-size: 15px;
+
     color: var(--gray);
   }
-
   > p {
     font-size: 15px;
     margin-top: 11px;
@@ -63,7 +67,6 @@ export const ProfileData = styled.div`
       color: var(--twitter);
     }
   }
-
   > ul {
     list-style: none;
     margin-top: 10px;
@@ -72,26 +75,11 @@ export const ProfileData = styled.div`
     > li {
       font-size: 15px;
       color: var(--gray);
-      display: flex;
-      align-items: center;
-      margin-bottom: 5px;
 
       > svg {
         fill: var(--gray);
         margin-right: 5px;
       }
-    }
-  }
-`;
-export const Followage = styled.div`
-  display: flex;
-
-  > span {
-    font-size: 15px;
-    color: var(--gray);
-
-    & + span {
-      margin-left: 20px;
     }
   }
 `;
@@ -103,11 +91,24 @@ const iconCSS = css`
   color: var(--gray);
 `;
 
-export const CakeIcon = styled(LocationOn)`
+export const LocationIcon = styled(LocationOn)`
   ${iconCSS}
 `;
-export const LocationIcon = styled(Cake)`
+export const CakeIcon = styled(Cake)`
   ${iconCSS}
+`;
+
+export const Followage = styled.div`
+  display: flex;
+
+  > span {
+    font-size: 15px;
+    color: var(--gray);
+
+    & + span {
+      margin-left: 20px;
+    }
+  }
 `;
 
 export const EditButton = styled(Button)`
