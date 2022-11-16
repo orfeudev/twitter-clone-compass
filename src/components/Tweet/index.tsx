@@ -1,10 +1,11 @@
 import React from 'react';
+import moment from 'moment';
+import { ITweet } from '../../@types';
 import {
   Container,
   Retweeted,
   RocketseatIcon,
   Body,
-  Avatar,
   Content,
   Header,
   Dot,
@@ -16,24 +17,33 @@ import {
   RetweetIcon,
   LikeIcon,
   ShareIcon,
+  // Avatar,
 } from './styles';
-const Tweet: React.FC = () => {
+import { Avatar } from '../Avatar';
+export interface TweetProps {
+  tweet: ITweet;
+}
+
+const Tweet: React.FC<TweetProps> = ({ tweet }) => {
+  const imageURL =
+    'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png';
+
   return (
     <Container>
-      <Retweeted>
+      {/* <Retweeted>
         <RocketseatIcon />
         Voce retweetou
-      </Retweeted>
+      </Retweeted> */}
 
       <Body>
-        <Avatar />
+        <Avatar width={49} height={49} imageURL={imageURL} />
 
         <Content>
           <Header>
-            <strong>Rocketseat</strong>
-            <span>@rocketseat</span>
+            <strong>{`${tweet.user.firstName} ${tweet.user.lastName} `}</strong>
+            <span>{`@${tweet.user.username}`}</span>
             <Dot />
-            <time>27 de jun</time>
+            <time>{`${moment(tweet.createdAt).format('MMM DD')}`}</time>
           </Header>
 
           <Description>Lorem ipsum dolor sit, amet consectetur</Description>
@@ -41,19 +51,18 @@ const Tweet: React.FC = () => {
           <Icons>
             <Status>
               <CommentIcon />
-              18
+              {`${tweet.commentsCount}`}
             </Status>
             <Status>
               <RetweetIcon />
-              18
+              {`${tweet.retweetsCount}`}
             </Status>
             <Status>
               <LikeIcon />
-              18
+              {`${tweet.likesCount}`}
             </Status>
             <Status>
               <ShareIcon />
-              18
             </Status>
           </Icons>
         </Content>

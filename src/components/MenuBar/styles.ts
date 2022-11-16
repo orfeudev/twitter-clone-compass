@@ -7,6 +7,7 @@ import {
   Person,
   ExitToApp,
 } from '../../styles/Icons';
+import { Twitter } from 'styled-icons/bootstrap';
 export const Container = styled.div`
   display: none;
 
@@ -35,7 +36,7 @@ export const TopSide = styled.div`
     align-items: flex-start;
   }
 `;
-export const Logo = styled(Person)`
+export const Logo = styled(Twitter)`
   width: 41px;
   height: 41px;
 

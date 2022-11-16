@@ -8,6 +8,10 @@ export const Container = styled.div`
 
   border-bottom: 1px solid ${(props) => props.theme.colors.outline};
   max-width: 100%;
+
+  &:hover {
+    background: ${(props) => props.theme.colors.secondary};
+  }
 `;
 export const Retweeted = styled.div`
   display: flex;
@@ -33,18 +37,19 @@ export const Body = styled.div`
 
   position: relative;
 `;
-export const Avatar = styled.div`
+export const Avatar = styled.div<{ imageURL?: string }>`
   width: 49px;
   height: 49px;
-
   border-radius: 50%;
   flex-shrink: 0;
-  background: ${(props) => props.theme.colors.gray};
-
+  background-image: url(${(props) => props.imageURL});
+  background-position: center;
+  background-size: contain;
   position: absolute;
   top: 0;
   left: 0;
 `;
+
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
